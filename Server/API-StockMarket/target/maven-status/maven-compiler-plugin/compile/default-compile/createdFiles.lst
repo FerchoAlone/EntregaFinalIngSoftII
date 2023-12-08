@@ -1,0 +1,11 @@
+com\StockMarket\APIStockMarket\Access\IStockRepository.class
+com\StockMarket\APIStockMarket\Access\UserRepositoryArray.class
+com\StockMarket\APIStockMarket\Controller\StockController.class
+com\StockMarket\APIStockMarket\Access\StockRepositoryArray.class
+com\StockMarket\APIStockMarket\Controller\MarketController.class
+com\StockMarket\APIStockMarket\Access\IUserRepository.class
+com\StockMarket\APIStockMarket\Service\StockService.class
+com\StockMarket\APIStockMarket\Service\UserService.class
+com\StockMarket\APIStockMarket\Controller\UserController.class
+com\StockMarket\APIStockMarket\Service\MarketService.class
+com\StockMarket\APIStockMarket\ApiStockMarketApplication.class

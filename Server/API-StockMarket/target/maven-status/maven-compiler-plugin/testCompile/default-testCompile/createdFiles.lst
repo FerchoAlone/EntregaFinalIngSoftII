@@ -1,0 +1,4 @@
+com\StockMarket\APIStockMarket\Controller\MarketControllerTest.class
+com\StockMarket\APIStockMarket\ApiStockMarketApplicationTests.class
+com\StockMarket\APIStockMarket\Controller\UserControllerTest.class
+com\StockMarket\APIStockMarket\Controller\StockControllerTest.class
