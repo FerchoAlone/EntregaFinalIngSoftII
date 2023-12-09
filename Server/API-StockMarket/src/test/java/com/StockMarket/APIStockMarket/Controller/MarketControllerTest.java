@@ -1,7 +1,7 @@
 package com.StockMarket.APIStockMarket.Controller;
 
-import com.StockMarket.APIStockMarket.Access.IStockRepository;
-import com.StockMarket.APIStockMarket.Access.IUserRepository;
+import com.StockMarket.Ports.Output.Persistence.IStockRepository;
+import com.StockMarket.Ports.Output.Persistence.IUserRepository;
 import com.stockmarket.commons.protocol.PatchRequest;
 import com.stockmarket.commons.protocol.ResponseProtocol;
 import com.stockmarket.commons.protocol.StatusCode;

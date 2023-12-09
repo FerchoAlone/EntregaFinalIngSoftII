@@ -1,6 +1,6 @@
 package com.StockMarket.APIStockMarket.Controller;
 
-import com.StockMarket.APIStockMarket.Access.IUserRepository;
+import com.StockMarket.Ports.Output.Persistence.IUserRepository;
 import com.stockmarket.commons.domain.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

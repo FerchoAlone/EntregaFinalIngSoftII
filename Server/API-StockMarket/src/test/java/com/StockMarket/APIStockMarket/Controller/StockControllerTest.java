@@ -1,6 +1,6 @@
 package com.StockMarket.APIStockMarket.Controller;
 
-import com.StockMarket.APIStockMarket.Access.IStockRepository;
+import com.StockMarket.Ports.Output.Persistence.IStockRepository;
 import com.stockmarket.commons.protocol.ResponseProtocol;
 import com.stockmarket.commons.protocol.StatusCode;
 import com.fasterxml.jackson.core.JsonProcessingException;
