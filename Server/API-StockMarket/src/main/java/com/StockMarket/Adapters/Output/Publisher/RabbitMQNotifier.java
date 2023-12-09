@@ -23,7 +23,6 @@ import javax.swing.JOptionPane;
  */
 public class RabbitMQNotifier implements INotifier {
     
-    private final static String QUEUE_NAME = "mi_cola";//SE VA
     private static final String EXCHANGE_NAME = "direct_manage_notifications";
     private ConnectionFactory factory;
     private String host;
@@ -37,13 +36,13 @@ public class RabbitMQNotifier implements INotifier {
     
     
     @Override
-    public boolean sendNotification(String msg) {
-        
+    public boolean sendNotification(String msg, String userId) {
+ 
         try (Connection connection = factory.newConnection();
             Channel channel = connection.createChannel()) {
             channel.exchangeDeclare(EXCHANGE_NAME, "direct");
-            channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-            channel.basicPublish("", QUEUE_NAME, null, msg.getBytes());
+
+            channel.basicPublish(EXCHANGE_NAME, userId, null, msg.getBytes());
             
         } catch (IOException | TimeoutException ex) {
             Logger.getLogger(RabbitMQNotifier.class.getName()).log(Level.SEVERE, null, ex);
