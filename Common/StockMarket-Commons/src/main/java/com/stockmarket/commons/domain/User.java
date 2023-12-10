@@ -3,6 +3,7 @@ package com.stockmarket.commons.domain;
 
 import com.stockmarket.commons.protocol.StatusCode;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -97,6 +98,5 @@ public class User {
         }
         return null;
     }
-    
     
 }

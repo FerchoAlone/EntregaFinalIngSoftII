@@ -42,7 +42,7 @@ public class RabbitMQNotifier implements INotifier {
             Channel channel = connection.createChannel()) {
             channel.exchangeDeclare(EXCHANGE_NAME, "direct",true);
             
-            AMQP.BasicProperties properties = new AMQP.BasicProperties.Builder().deliveryMode(2).build();
+            AMQP.BasicProperties properties = new AMQP.BasicProperties.Builder().deliveryMode(1).build();
             channel.basicPublish(EXCHANGE_NAME, userId, properties, msg.getBytes());
             
         } catch (IOException | TimeoutException ex) {
