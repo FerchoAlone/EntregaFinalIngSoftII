@@ -20,6 +20,7 @@ public class ApiStockMarketApplication {
             ConfigurableApplicationContext EX = SpringApplication.run(ApiStockMarketApplication.class, args);
             IStockRepository stocksRepo = EX.getBean(StockRepositoryArray.class);
             IUserRepository usersRepo = EX.getBean(UserRepositoryArray.class);
+            
             INotifier RabbitMQNotifier = new RabbitMQNotifier("localhost");
             
             

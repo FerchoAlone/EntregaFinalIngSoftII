@@ -50,9 +50,9 @@ public class RabbitMQListener extends Observable {
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
 
-        channel.exchangeDeclare(EXCHANGE_NAME, "direct");
-        String queueName = channel.queueDeclare().getQueue();
-
+        channel.exchangeDeclare(EXCHANGE_NAME, "direct",true);
+        //String queueName = channel.queueDeclare().getQueue();
+        String queueName = channel.queueDeclare("main", true, false, false, null).getQueue();
         channel.queueBind(queueName, EXCHANGE_NAME, userId);
 
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {

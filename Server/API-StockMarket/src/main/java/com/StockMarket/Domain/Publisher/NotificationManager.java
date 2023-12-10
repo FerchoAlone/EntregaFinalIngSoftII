@@ -45,6 +45,7 @@ public class NotificationManager extends Thread {
     }
 
     private boolean verifyValueWithLimits(Stock userStock, Stock globalStock) {
+        //return userStock.getActPrice()<globalStock.getLowerLimit() || userStock.getActPrice()>globalStock.getUpperLimit();
         return true;
     }
 
@@ -54,25 +55,27 @@ public class NotificationManager extends Thread {
         //2 IR USUARIO POR USUARIO Y VER SI TIENE LA ACCION REGISTRADA
         ArrayList<User> currentUsers = users.getAllUsers();
         StringBuilder msg = new StringBuilder();
+        Stock auxStock = null;
+
         for (User user : currentUsers) {
-            if(user.getMyStocks()==null)continue;
-            for (Stock userStock : user.getMyStocks()) {
-                for (Stock globalStock : currentStocks) {
-
-                    if (userStock.getId().equals(globalStock.getId())) {
-                        //  2.1 SI LA TIENE REGISTRADA , VERIFICAR SI SE SALIO DE LOS LIMITES
-                        if (verifyValueWithLimits(userStock, globalStock)) {
-                            //  2.2 SI SE SALIO DE LOS LIMITES , ENVIAR NOTIFICACION
-                            msg.append("Oye ").append(user.getId()).append(" , el valor de la accion ").append(userStock.getName()).append("(").append(userStock.getId()).append(") HA SALIDO DE TUS LIMITES, Revisa!! ");
-                            notifier.sendNotification(msg.toString());
-                            msg.delete(0, msg.length());
-                        }
-
-                    }
-                }
+            if (user.getMyStocks() == null) {
+                continue;
             }
+            for (Stock globalStock : currentStocks) {
+                auxStock = user.getStockById(globalStock.getId());
+                if (auxStock == null) {
+                    continue;
+                }
+                //  2.1 SI LA TIENE REGISTRADA , VERIFICAR SI SE SALIO DE LOS LIMITES
+                if (verifyValueWithLimits(auxStock, globalStock)) {
+                    //  2.2 SI SE SALIO DE LOS LIMITES , ENVIAR NOTIFICACION
+                    msg.append("Oye ").append(user.getId()).append(" , el valor de la accion ").append(auxStock.getName()).append("(").append(auxStock.getId()).append(") HA SALIDO DE TUS LIMITES, Revisa!! ");
+                    notifier.sendNotification(msg.toString(), user.getId());
+                    msg.delete(0, msg.length());
+                }
 
+            }
         }
-    }
 
+    }
 }

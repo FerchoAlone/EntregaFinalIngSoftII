@@ -5,6 +5,7 @@
 package com.StockMarket.Adapters.Output.Publisher;
 
 import com.StockMarket.Ports.Output.Publisher.INotifier;
+import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.BuiltinExchangeType;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
@@ -13,7 +14,6 @@ import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 /**
  * @author Katherin Alexandra Zuñiga Morales
@@ -40,9 +40,10 @@ public class RabbitMQNotifier implements INotifier {
  
         try (Connection connection = factory.newConnection();
             Channel channel = connection.createChannel()) {
-            channel.exchangeDeclare(EXCHANGE_NAME, "direct");
-
-            channel.basicPublish(EXCHANGE_NAME, userId, null, msg.getBytes());
+            channel.exchangeDeclare(EXCHANGE_NAME, "direct",true);
+            
+            AMQP.BasicProperties properties = new AMQP.BasicProperties.Builder().deliveryMode(2).build();
+            channel.basicPublish(EXCHANGE_NAME, userId, properties, msg.getBytes());
             
         } catch (IOException | TimeoutException ex) {
             Logger.getLogger(RabbitMQNotifier.class.getName()).log(Level.SEVERE, null, ex);

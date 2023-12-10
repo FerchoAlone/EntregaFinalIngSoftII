@@ -12,6 +12,6 @@ package com.StockMarket.Ports.Output.Publisher;
  */
 public interface INotifier {
  
-    boolean sendNotification(String msg); 
+    boolean sendNotification(String msg, String userId); 
     
 }
