@@ -45,8 +45,8 @@ public class NotificationManager extends Thread {
     }
 
     private boolean verifyValueWithLimits(Stock userStock, Stock globalStock) {
-        //return userStock.getActPrice()<globalStock.getLowerLimit() || userStock.getActPrice()>globalStock.getUpperLimit();
-        return true;
+        return globalStock.getActPrice()<userStock.getLowerLimit() || globalStock.getActPrice()>userStock.getUpperLimit();
+        //return true;
     }
 
     private void checkStockValues() {
@@ -67,10 +67,12 @@ public class NotificationManager extends Thread {
                     continue;
                 }
                 //  2.1 SI LA TIENE REGISTRADA , VERIFICAR SI SE SALIO DE LOS LIMITES
-                if (verifyValueWithLimits(auxStock, globalStock)) {
+                if (verifyValueWithLimits(auxStock, globalStock) && !auxStock.isNofied()) {
                     //  2.2 SI SE SALIO DE LOS LIMITES , ENVIAR NOTIFICACION
                     msg.append("Oye ").append(user.getId()).append(" , el valor de la accion ").append(auxStock.getName()).append("(").append(auxStock.getId()).append(") HA SALIDO DE TUS LIMITES, Revisa!! ");
-                    notifier.sendNotification(msg.toString(), user.getId());
+                    if(notifier.sendNotification(msg.toString(), user.getId())){
+                        auxStock.setNofied(true);
+                    }
                     msg.delete(0, msg.length());
                 }
 

@@ -4,6 +4,7 @@ com\StockMarket\Ports\Output\Persistence\IStockRepository.class
 com\StockMarket\Ports\Input\IUser.class
 com\StockMarket\Ports\Output\Persistence\IUserRepository.class
 com\StockMarket\APIStockMarket\ApiStockMarketApplication.class
+com\StockMarket\APIStockMarket\Simulator\Simulator.class
 com\StockMarket\Ports\Output\Publisher\INotifier.class
 com\StockMarket\Adapters\Input\Controller\UserController.class
 com\StockMarket\Adapters\Output\Publisher\RabbitMQNotifier.class

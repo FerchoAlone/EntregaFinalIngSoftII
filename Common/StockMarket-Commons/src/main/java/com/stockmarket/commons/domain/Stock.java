@@ -23,6 +23,19 @@ public class Stock {
     private Double oldPrice;
     private Double lowerLimit;
     private Double upperLimit;
+    private boolean isNofied;
+
+    public Stock(String id, String name, Double actPrice, Double oldPrice, Double lowerLimit, Double upperLimit) {
+        this.id = id;
+        this.name = name;
+        this.actPrice = actPrice;
+        this.oldPrice = oldPrice;
+        this.lowerLimit = lowerLimit;
+        this.upperLimit = upperLimit;
+        this.isNofied=false;
+    }
+    
+    
     
     /**
      * Set a new value for the stock price, updating its oldPrice
@@ -62,4 +75,6 @@ public class Stock {
         this.upperLimit=newValue;
         return StatusCode.RESPONSE_SUCCESS;
     }
+    
+ 
 }

@@ -1,5 +1,6 @@
 package com.StockMarket.APIStockMarket;
 
+import com.StockMarket.APIStockMarket.Simulator.Simulator;
 import com.StockMarket.Adapters.Output.Persistence.StockRepositoryArray;
 import com.StockMarket.Adapters.Output.Persistence.UserRepositoryArray;
 import com.StockMarket.Adapters.Output.Publisher.RabbitMQNotifier;
@@ -26,7 +27,9 @@ public class ApiStockMarketApplication {
             
             NotificationManager notificationM= new NotificationManager(stocksRepo,usersRepo, RabbitMQNotifier);
             notificationM.start();
-            
+        
+            Simulator sim= new Simulator(stocksRepo, usersRepo);
+            sim.start();
 	}   
 
 }

@@ -9,7 +9,6 @@ import com.stockmarket.commons.protocol.StatusCode;
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 /**
  * @author Katherin Alexandra Zuñiga Morales
@@ -39,7 +38,7 @@ public class MarketService {
         
         userStocks =user.getMyStocks();
         if(userStocks==null)return null;
-        
+        user.updateNotificationState();
         Stock stockAux = null;
         
         for(Stock stock:userStocks){

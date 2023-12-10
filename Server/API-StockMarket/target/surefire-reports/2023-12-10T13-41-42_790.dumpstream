@@ -1,5 +1,0 @@
-# Created at 2023-12-10T13:41:43.104
-Boot Manifest-JAR contains absolute paths in classpath 'F:\Universidades\UNICAUCA\S6\Ingenieria de software\La mala pa Julio\Repo\Server\API-StockMarket\target\test-classes'
-Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
-'other' has different root
-

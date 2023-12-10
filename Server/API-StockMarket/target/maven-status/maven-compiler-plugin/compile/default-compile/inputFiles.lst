@@ -12,6 +12,7 @@ F:\Universidades\UNICAUCA\S6\Ingenieria de software\La mala pa Julio\Repo\Server
 F:\Universidades\UNICAUCA\S6\Ingenieria de software\La mala pa Julio\Repo\Server\API-StockMarket\src\main\java\com\StockMarket\Ports\Input\IUser.java
 F:\Universidades\UNICAUCA\S6\Ingenieria de software\La mala pa Julio\Repo\Server\API-StockMarket\src\main\java\com\StockMarket\Ports\Output\Persistence\IStockRepository.java
 F:\Universidades\UNICAUCA\S6\Ingenieria de software\La mala pa Julio\Repo\Server\API-StockMarket\src\main\java\com\StockMarket\Adapters\Output\Publisher\RabbitMQNotifier.java
+F:\Universidades\UNICAUCA\S6\Ingenieria de software\La mala pa Julio\Repo\Server\API-StockMarket\src\main\java\com\StockMarket\APIStockMarket\Simulator\Simulator.java
 F:\Universidades\UNICAUCA\S6\Ingenieria de software\La mala pa Julio\Repo\Server\API-StockMarket\src\main\java\com\StockMarket\Ports\Output\Persistence\IUserRepository.java
 F:\Universidades\UNICAUCA\S6\Ingenieria de software\La mala pa Julio\Repo\Server\API-StockMarket\src\main\java\com\StockMarket\Ports\Input\IMarket.java
 F:\Universidades\UNICAUCA\S6\Ingenieria de software\La mala pa Julio\Repo\Server\API-StockMarket\src\main\java\com\StockMarket\Domain\Service\UserService.java
