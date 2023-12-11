@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.StockMarket.APIStockMarket.Controller.MarketControllerTest
 -------------------------------------------------------------------------------
-Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.024 s - in com.StockMarket.APIStockMarket.Controller.MarketControllerTest
+Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.052 s - in com.StockMarket.APIStockMarket.Controller.MarketControllerTest

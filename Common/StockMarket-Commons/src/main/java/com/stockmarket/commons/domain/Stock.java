@@ -23,7 +23,7 @@ public class Stock {
     private Double oldPrice;
     private Double lowerLimit;
     private Double upperLimit;
-    private boolean isNofied;
+    private boolean isNotified;
 
     public Stock(String id, String name, Double actPrice, Double oldPrice, Double lowerLimit, Double upperLimit) {
         this.id = id;
@@ -32,7 +32,7 @@ public class Stock {
         this.oldPrice = oldPrice;
         this.lowerLimit = lowerLimit;
         this.upperLimit = upperLimit;
-        this.isNofied=false;
+        this.isNotified=false;
     }
     
     

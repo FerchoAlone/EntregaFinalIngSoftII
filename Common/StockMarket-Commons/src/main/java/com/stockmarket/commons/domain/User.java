@@ -116,7 +116,7 @@ public class User {
     public void updateNotificationState(){
         if (this.myStocks != null) {
             for (Stock stock : myStocks) {
-                stock.setNofied(false);
+                stock.setNotified(false);
             }
         }
     }

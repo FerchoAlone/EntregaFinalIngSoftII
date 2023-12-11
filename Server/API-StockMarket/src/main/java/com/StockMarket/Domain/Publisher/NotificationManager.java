@@ -67,11 +67,11 @@ public class NotificationManager extends Thread {
                     continue;
                 }
                 //  2.1 SI LA TIENE REGISTRADA , VERIFICAR SI SE SALIO DE LOS LIMITES
-                if (verifyValueWithLimits(auxStock, globalStock) && !auxStock.isNofied()) {
+                if (verifyValueWithLimits(auxStock, globalStock) && !auxStock.isNotified()) {
                     //  2.2 SI SE SALIO DE LOS LIMITES , ENVIAR NOTIFICACION
                     msg.append("Oye ").append(user.getId()).append(" , el valor de la accion ").append(auxStock.getName()).append("(").append(auxStock.getId()).append(") HA SALIDO DE TUS LIMITES, Revisa!! ");
                     if(notifier.sendNotification(msg.toString(), user.getId())){
-                        auxStock.setNofied(true);
+                        auxStock.setNotified(true);
                     }
                     msg.delete(0, msg.length());
                 }
