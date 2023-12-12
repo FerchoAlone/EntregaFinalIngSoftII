@@ -22,9 +22,8 @@ public class AgenteFinanciero {
         RabbitMQListener listener = new RabbitMQListener( id);
         AgenteFinancieroView view = new AgenteFinancieroView(); 
         listener.addObservador(view);
-        
-        listener.listenNotifications();     
         view.setVisible(true);
-          
+        
+        listener.listenNotifications();      
     }
 }

@@ -1,4 +1,3 @@
-
 package com.agentefinanciero.Subscriber;
 
 import com.agentefinanciero.infra.Observable;
@@ -8,6 +7,7 @@ import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.DeliverCallback;
 import java.io.IOException;
 import java.io.InputStream;
+import static java.lang.Thread.sleep;
 import java.util.Properties;
 import java.util.concurrent.TimeoutException;
 
@@ -45,13 +45,12 @@ public class RabbitMQListener extends Observable {
         factory.setHost(host);
     }
 
-    public void listenNotifications() throws IOException, TimeoutException {
+    public void listenNotifications() throws IOException, TimeoutException, InterruptedException {
 
-        Connection connection = factory.newConnection();
+        Connection connection = createConnection();
         Channel channel = connection.createChannel();
 
         channel.exchangeDeclare(EXCHANGE_NAME, "direct",true);
-        //String queueName = channel.queueDeclare().getQueue();
         String queueName = channel.queueDeclare("main_"+userId, true, false, false, null).getQueue();
         channel.queueBind(queueName, EXCHANGE_NAME, userId);
 
@@ -61,5 +60,20 @@ public class RabbitMQListener extends Observable {
         };
         channel.basicConsume(queueName, true, deliverCallback, consumerTag -> {
         });
+    }
+    public Connection createConnection() throws InterruptedException{
+        
+        Connection connection;
+        while(true){
+            try{
+                connection = factory.newConnection();
+                break;
+            }catch(Exception e){
+                notificarTodos("No se pudo establecer la conexion.");
+                sleep(8000);
+            }
+        }
+        
+        return connection;
     }
 }
