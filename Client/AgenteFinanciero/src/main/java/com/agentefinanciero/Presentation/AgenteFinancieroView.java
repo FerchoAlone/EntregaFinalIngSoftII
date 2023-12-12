@@ -1,7 +1,7 @@
 
 package com.agentefinanciero.Presentation;
 
-import com.agentefinanciero.infra.IObservador;
+import com.agentefinanciero.observer.IObservador;
 import javax.swing.JOptionPane;
 
 /**

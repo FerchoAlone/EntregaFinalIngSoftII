@@ -22,7 +22,7 @@ public class ApiStockMarketApplication {
             IStockRepository stocksRepo = EX.getBean(StockRepositoryArray.class);
             IUserRepository usersRepo = EX.getBean(UserRepositoryArray.class);
             
-            INotifier RabbitMQNotifier = new RabbitMQNotifier("172.21.0.2");
+            INotifier RabbitMQNotifier = new RabbitMQNotifier("rabbitmq-container");
             
             
             NotificationManager notificationM= new NotificationManager(stocksRepo,usersRepo, RabbitMQNotifier);

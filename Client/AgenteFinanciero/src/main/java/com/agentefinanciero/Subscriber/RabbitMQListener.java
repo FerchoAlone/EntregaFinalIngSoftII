@@ -1,6 +1,6 @@
 package com.agentefinanciero.Subscriber;
 
-import com.agentefinanciero.infra.Observable;
+import com.agentefinanciero.observer.Observable;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
