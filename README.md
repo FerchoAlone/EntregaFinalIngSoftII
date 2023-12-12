@@ -15,6 +15,7 @@ Se entrega:
 - Proyecto Server "API-SocketMarket" : Servidor con API-Rest hecha en Springboot y nortificador implementado  RabbitMQ (Arquitectura hexagonal)
 - Documento PDF con la documentacion solicitado
 - Carpeta UMLs que contiene todos lo diagramas de diseño que se hiceron durante el proyecto
+- Coleccion Postman para las consultas a la API
 
 NOTA: PARA DOCKER SE SIGUIERON LOS SIGUIENTES PASOS:
 1. Crear una red por medio del comando : "docker network create redbase"
